@@ -10,5 +10,6 @@
       <Button mnemonicParsing="false" text="Show More Info" />
       <Button mnemonicParsing="false" text="Remove " />
       <Button mnemonicParsing="false" text="Go Back" />
+      <Button mnemonicParsing="false" text="Create New List" />
    </children>
 </VBox>

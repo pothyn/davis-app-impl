@@ -1,0 +1,69 @@
+@startuml
+
+class MainApp {
+
+    +start()
+    +main(String[] args)
+    +sceneSetUp(String fileName, String windowTitle)
+
+}
+
+class AllToDoLists {
+
+    -toDoLists: ArrayList<ToDoList>
+
+    +AllToDoLists(): void
+
+    'helpful
+    +findToDoListIndex(String toDoListName): int
+
+    'required
+    +addToDoList(): void
+    +removeToDoList(int index)
+    +editToDoList(int index)
+    +saveToDoList(): void
+    +loadToDoList(): void
+
+}
+
+class ToDoList {
+
+    -toDoTitle: String
+    -itemList: ArrayList<toDoListItem>
+
+    'required
+    +addItem(): void
+    +removeItem(): void
+    +displayAllItems(): void
+    +displayIncompleteItems(): void
+    +displayCompletedItems(): void
+
+}
+
+class ToDoListItem {
+
+    -date: Date
+    -itemDescription: String
+    -isComplete: boolean
+
+    +markItemComplete(): void
+    +editDescription(): void
+    +editDueDate(): void
+    +isComplete(): boolean
+    +changeComplete(boolean value): void
+
+}
+
+class Date {
+
+    -day: int
+    -month: int
+    -year: int
+
+    +Date(int day, int month, int year): void
+    +changeDate(int day, month, year): void
+    +getDate(): String
+
+}
+
+@enduml
