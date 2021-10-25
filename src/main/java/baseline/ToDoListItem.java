@@ -11,9 +11,10 @@ public class ToDoListItem {
     private String itemDescription;
     private boolean isComplete;
 
-    public ToDoListItem(Date date, String itemDescription, boolean isComplete) {
+    public ToDoListItem(Date date, String itemDescription) {
 
         // initialize vars
+        // set isComplete to false always
 
     }
 
