@@ -21,7 +21,7 @@ class AllToDoLists {
     +addToDoList(): void
     +removeToDoList(int index)
     +editToDoList(int index)
-    +saveToDoList(): void
+    +saveToDoList(ArrayList<int> saveArray, String fileLocation): boolean
     +loadToDoList(): void
 
 }
@@ -65,5 +65,10 @@ class Date {
     +getDate(): String
 
 }
+
+MainApp -> AllToDoLists
+AllToDoLists -> ToDoList
+ToDoList -> ToDoListItem
+ToDoListItem -* Date
 
 @enduml

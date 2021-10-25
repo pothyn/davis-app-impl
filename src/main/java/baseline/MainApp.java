@@ -5,16 +5,18 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
-    private AllToDoLists alltoDoLists;
+    private AllToDoLists app;
 
     @Override
     public void start(Stage stage) throws Exception {
 
-        // Create new AllToDoLists
+        // Initialize app
 
         sceneSetup("CreateList", "Create List");
 
-        //
+        // while
+            // check for buttons push
+
 
     }
 
