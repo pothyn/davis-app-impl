@@ -12,9 +12,11 @@ public class ToDoList {
     private String toDoTitle;
     private ArrayList<ToDoListItem> itemList;
 
-    public ToDoList() {
+    public ToDoList(String toDoTitle) {
 
         // initialize
+        this.toDoTitle = toDoTitle;
+        itemList = new ArrayList<>();
 
     }
 

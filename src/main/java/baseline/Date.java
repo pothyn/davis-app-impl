@@ -14,18 +14,23 @@ public class Date {
     public Date(int day, int month, int year) {
 
         // initialize data
+        this.day = day;
+        this.month = month;
+        this.year = year;
 
     }
 
     public void changeDate(int day, int month, int year) {
 
-        // set variables
+        // set variables to given values here
 
     }
 
     public String getDate() {
 
         // return Date as a String
+
+        return month + "/" + day + "/" + year;
 
     }
 

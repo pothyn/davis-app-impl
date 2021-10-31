@@ -5,6 +5,7 @@
 
 package baseline;
 
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class AllToDoLists {
@@ -14,6 +15,7 @@ public class AllToDoLists {
     public AllToDoLists(){
 
         // initialize toDoLists
+        toDoLists = new ArrayList<>();
 
     }
 
@@ -24,6 +26,7 @@ public class AllToDoLists {
                 // return the index
 
         // return -1 for a catastrophic failure
+        return -1;
 
     }
 

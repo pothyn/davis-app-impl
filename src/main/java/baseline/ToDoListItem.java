@@ -14,7 +14,11 @@ public class ToDoListItem {
     public ToDoListItem(Date date, String itemDescription) {
 
         // initialize vars
+        this.date = date;
+        this.itemDescription = itemDescription;
+
         // set isComplete to false always
+        isComplete = false;
 
     }
 
