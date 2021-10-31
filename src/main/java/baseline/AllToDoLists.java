@@ -5,8 +5,8 @@
 
 package baseline;
 
-import java.sql.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AllToDoLists {
 
@@ -59,7 +59,7 @@ public class AllToDoLists {
 
     }
 
-    public boolean saveToDoList(ArrayList<Integer> saveArray, String fileLocation) {
+    public boolean saveToDoList(List<Integer> saveArray, String fileLocation) {
 
         // open file at fileLocation
 
