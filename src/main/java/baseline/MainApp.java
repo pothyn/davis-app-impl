@@ -22,11 +22,19 @@ public class MainApp extends Application {
     public void start(Stage stage) throws IOException {
 
         // Initialize app
+        app = new AllToDoLists();
 
         sceneSetup(stage, "CreateList", "Create List");
 
         // while
-            // check for buttons push
+            // check for the AddButton press
+                // move to AddToDo.fxml and wait for input (data must be entered before!)
+                // addToDoFxml(<entered data>)
+            // check for the ViewListButton press
+                // move to ViewList.fxml
+                // viewListFxml()
+
+
 
 
     }
@@ -56,6 +64,18 @@ public class MainApp extends Application {
 
     }
 
+    public void addToDoFxml(String listTitle) {
 
+        // Allow user to input data about the list
+
+        // Create a new ToDoList in app using the listTitle and now this information
+
+    }
+
+    public void viewListFxml() {
+
+        // wait for input to go back
+
+    }
 
 }

@@ -2,9 +2,13 @@
 
 class MainApp {
 
+    -app: AllToDoLists
+
     +start()
     +main(String[] args)
     +sceneSetUp(String fileName, String windowTitle)
+    +addToDoLFxml(String title)
+    +viewListFxml()
 
 }
 

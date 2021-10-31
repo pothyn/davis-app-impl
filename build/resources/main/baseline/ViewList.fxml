@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ChoiceBox prefWidth="150.0" />
+      <Button mnemonicParsing="false" text="Show More Info" />
+      <Button mnemonicParsing="false" text="Remove " />
+      <Button mnemonicParsing="false" text="Go Back" />
+      <Button mnemonicParsing="false" text="Create New List" />
+   </children>
+</VBox>
