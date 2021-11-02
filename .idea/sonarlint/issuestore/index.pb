@@ -15,3 +15,8 @@ T
 $src/test/java/baseline/DateTest.java,3\f\3f0e7374eb7fab99ee677a18ddfe8bbc18f6eae4
 X
 (src/test/java/baseline/ToDoListTest.java,3\4\34125c4637d19664a5e59e7ca7f30cc108b24e59
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+W
+'src/test/java/baseline/MainAppTest.java,c\c\cc5cc8e407c04a12e2e2f96e14332aad167dc155
