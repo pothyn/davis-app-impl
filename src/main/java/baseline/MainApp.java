@@ -18,6 +18,7 @@ public class MainApp extends javafx.application.Application {
 
     private AllToDoLists app;
 
+    @FXML
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -28,17 +29,9 @@ public class MainApp extends javafx.application.Application {
 
         // while
             // wait for user to select either Create New List or Load Existing List
-
-        // while
-            // check for the AddButton press
-                // move to AddToDo.fxml and wait for input (data must be entered before!)
-                // addToDoFxml(<entered data>)
-            // check for the ViewListButton press
-                // move to ViewList.fxml
-                // viewListFxml()
-
-
-
+                // if clicked on "Create New"
+                    // call sceneSetup() using stage, "HomePage", "To Do List App"
+                    // homePage(stage)
 
     }
 
@@ -49,11 +42,6 @@ public class MainApp extends javafx.application.Application {
 
     @FXML
     public void sceneSetup(Stage stage, String fileName, String windowTitle) throws IOException {
-
-        // Just to clarify, this is the most basic code possible to load the scene
-        // I didn't want to go too far with it because that would break out of pseudocode...
-        // however, I was told it needed to run, so this was the only way to do it without an error
-
 
         // Open <fileName>.fxml file
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fileName + ".fxml")));
@@ -69,7 +57,18 @@ public class MainApp extends javafx.application.Application {
 
     }
 
-    @FXML
+    public void homePage(Scene scene) {
+
+        // while
+            // check for the AddButton press
+                // move to AddToDo.fxml and wait for input (data must be entered before!)
+                // addToDoFxml(<entered data>)
+            // check for the ViewListButton press
+                // move to ViewList.fxml
+                // viewListFxml()
+
+    }
+
     public void addToDoFxml(String listTitle) {
 
         // Allow user to input data about the list
@@ -78,7 +77,6 @@ public class MainApp extends javafx.application.Application {
 
     }
 
-    @FXML
     public void viewListFxml() {
 
         // wait for input to go back
