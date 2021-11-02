@@ -5,6 +5,7 @@
 
 package baseline;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,7 +24,10 @@ public class MainApp extends javafx.application.Application {
         // Initialize app
         app = new AllToDoLists();
 
-        sceneSetup(stage, "CreateList", "Create List");
+        sceneSetup(stage, "OpenApp", "To Do List App");
+
+        // while
+            // wait for user to select either Create New List or Load Existing List
 
         // while
             // check for the AddButton press
@@ -38,10 +42,12 @@ public class MainApp extends javafx.application.Application {
 
     }
 
+    @FXML
     public static void main(String[] args) {
         launch(args);
     }
 
+    @FXML
     public void sceneSetup(Stage stage, String fileName, String windowTitle) throws IOException {
 
         // Just to clarify, this is the most basic code possible to load the scene
@@ -63,6 +69,7 @@ public class MainApp extends javafx.application.Application {
 
     }
 
+    @FXML
     public void addToDoFxml(String listTitle) {
 
         // Allow user to input data about the list
@@ -71,6 +78,7 @@ public class MainApp extends javafx.application.Application {
 
     }
 
+    @FXML
     public void viewListFxml() {
 
         // wait for input to go back
