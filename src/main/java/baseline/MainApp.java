@@ -3,12 +3,17 @@
  *  Copyright 2021 Hunter Davis
  */
 
+// This class is basically the controller for the project
+
 package baseline;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,6 +22,9 @@ import java.util.Objects;
 public class MainApp extends javafx.application.Application {
 
     private AllToDoLists app;
+
+    @FXML
+    TextField fileNameTextBox;
 
     @FXML
     @Override
@@ -57,6 +65,12 @@ public class MainApp extends javafx.application.Application {
 
     }
 
+    public void createNewSetOfLists(ActionEvent event) throws IOException {
+
+        System.out.println(fileNameTextBox.getText());
+
+    }
+
     public void homePage(Scene scene) {
 
         // while
@@ -77,10 +91,12 @@ public class MainApp extends javafx.application.Application {
 
     }
 
-    public void viewListFxml() {
+    public void viewToDoListFxml() {
 
         // wait for input to go back
 
+        //
     }
+
 
 }
