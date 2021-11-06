@@ -5,19 +5,22 @@
 
 package baseline;
 
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public class ToDoListItem {
 
+    private ToDoList parentList;
     private Date date;
     private String itemDescription;
     private boolean isComplete;
 
-    public ToDoListItem(Date date, String itemDescription) {
+    public ToDoListItem(ToDoList list) {
 
         // initialize vars
-        this.date = date;
-        this.itemDescription = itemDescription;
-
-        // set isComplete to false always
+        parentList = list;
+        date = new Date();
+        itemDescription = "";
         isComplete = false;
 
     }
@@ -25,24 +28,39 @@ public class ToDoListItem {
     public void editCompletion(boolean isComplete) {
 
         // change isComplete
+        this.isComplete = isComplete;
 
     }
 
     public void editDescription(String itemDescription) {
 
         // change itemDescription
+        this.itemDescription = itemDescription;
 
     }
 
     public void editDate(int day, int month, int year) {
 
         // change date
+        date.changeDate(day, month, year);
 
     }
 
-    public boolean isComplete() {
+    public boolean getIsComplete() {
 
         return isComplete;
+
+    }
+
+    public String getItemDescription() {
+
+        return itemDescription;
+
+    }
+
+    public String getDate() {
+
+        return date.getDate();
 
     }
 

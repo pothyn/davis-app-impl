@@ -9,13 +9,11 @@ import java.util.ArrayList;
 
 public class ToDoList {
 
-    private String toDoTitle;
     private ArrayList<ToDoListItem> itemList;
 
-    public ToDoList(String toDoTitle) {
+    public ToDoList() {
 
         // initialize
-        this.toDoTitle = toDoTitle;
         itemList = new ArrayList<>();
 
     }

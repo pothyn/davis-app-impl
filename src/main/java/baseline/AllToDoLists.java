@@ -8,6 +8,15 @@ package baseline;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+
+        CAUTION!! CAUTION!! CAUTION!!
+                USELESS FILE!
+        CAUTION!! CAUTION!! CAUTION!!
+         DELETE AFTER CERTAIN IT IS
+        CAUTION!! CAUTION!! CAUTION!!
+*/
+
 public class AllToDoLists {
 
     private ArrayList<ToDoList> toDoLists;

@@ -2,34 +2,69 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <GridPane>
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <HBox prefHeight="35.0" prefWidth="600.0">
          <children>
-            <Label text="To Do List Manager" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" text="Add To Do List" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="Edit To Do List" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" text="Delete To Do List" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" text="Save Lists" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="600.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Save As" />
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Load" GridPane.columnIndex="1" />
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Tutorial" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
          </children>
-      </GridPane>
+      </HBox>
+      <HBox prefHeight="366.0" prefWidth="600.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <VBox prefHeight="148.0" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="100.0" text="Display" />
+                        <RadioButton mnemonicParsing="false" prefHeight="18.0" prefWidth="100.0" text="All" />
+                        <RadioButton mnemonicParsing="false" text="Incomplete" />
+                        <RadioButton mnemonicParsing="false" text="Complete" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="100.0" text="Actions" />
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Add" />
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Edit" />
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Remove" />
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Clear" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <TableView prefHeight="357.0" prefWidth="500.0">
+              <columns>
+                <TableColumn prefWidth="40.79998779296875" text="Select" />
+                <TableColumn prefWidth="63.20001220703125" text="Complete" />
+                  <TableColumn prefWidth="325.60003662109375" text="Description" />
+                  <TableColumn prefWidth="68.0" text="Due Date" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
    </children>
 </VBox>
