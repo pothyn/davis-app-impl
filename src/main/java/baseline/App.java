@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class App extends javafx.application.Application {
-
     private ToDoList app;
     private Stage window;
 
@@ -43,31 +42,4 @@ public class App extends javafx.application.Application {
         window.show();
 
     }
-
-    public void goToAdd() {
-
-    }
-
-    public void goToEdit(Item i) {
-
-    }
-
-    public void goToSaveAs() {
-
-
-
-    }
-
-    public void goToLoad() throws IOException {
-
-//        // Open Load.fxml
-//        FXMLLoader loader = new FXMLLoader(App.class.getClassLoader().getResource("Load.fxml"));
-//        Parent root = (Parent) loader.load();
-//
-//        window.setTitle("To Do List");
-//         scene = loader.getController();
-//        window.setScene(new Scene(root));
-
-    }
-
 }

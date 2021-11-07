@@ -39,10 +39,12 @@ public class ControllerEdit {
     }
 
     public void setItem(Item item) {
+        // set item equal to class'
         this.item = item;
+        // check for due date not being empty and set it if it is
         if (item.dueDateStringProperty().getValue() != null)
             dueDateBox.setValue(LocalDate.parse(item.getDueDateString()));
-
+        // set other values equal
         descriptionBox.textProperty().bindBidirectional(item.descriptionProperty());
         isCompleteBox.selectedProperty().bindBidirectional(item.isCompleteProperty());
     }

@@ -22,3 +22,5 @@ A
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 a
 1src/test/java/baseline/OpenAppControllerTest.java,0\9\0988e15de2460da1d76605f008d9bb20b1679090
+\
+,src/test/java/baseline/ToDoListItemTest.java,b\9\b9fce7e5802890b76f0ba8f36d77beb5542e8740

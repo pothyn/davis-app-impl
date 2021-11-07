@@ -76,7 +76,40 @@ public class ControllerHomePage {
     }
 
     @FXML
-    public void handleAdd(ActionEvent e) throws IOException {
+    public void handleSaveAs() throws IOException {
+        FXMLLoader loader = new FXMLLoader(App.class.getClassLoader().getResource("baseline/SaveAs.fxml"));
+        Parent root = (Parent) loader.load();
+
+        Stage stage = new Stage(StageStyle.DECORATED);
+        stage.setTitle("Save As");
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void handleLoad() throws IOException {
+        FXMLLoader loader = new FXMLLoader(App.class.getClassLoader().getResource("baseline/Load.fxml"));
+        Parent root = (Parent) loader.load();
+
+        Stage stage = new Stage(StageStyle.DECORATED);
+        stage.setTitle("Save As");
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void handleHelp() {
+
+    }
+
+    @FXML
+    public void handleAdd() throws IOException {
         Item newItem = new Item();
 
         FXMLLoader loader = new FXMLLoader(App.class.getClassLoader().getResource("baseline/AddEdit.fxml"));

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="baseline.ControllerLoad">
    <children>
       <GridPane alignment="CENTER">
         <columnConstraints>
@@ -23,10 +23,9 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="textBox" onMouseClicked="#filePick" prefWidth="379.0" GridPane.columnIndex="2" />
+            <TextField fx:id="fileTextBox" onMouseClicked="#filePick" prefWidth="379.0" GridPane.columnIndex="2" />
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loadFile" prefHeight="26.0" prefWidth="130.0" text="Load" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="85.0" text="File" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" onAction="#goBack" prefHeight="26.0" prefWidth="130.0" text="Go Back" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>
