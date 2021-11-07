@@ -79,6 +79,8 @@ public class ControllerHomePage {
     public void handleSaveAs() throws IOException {
         FXMLLoader loader = new FXMLLoader(App.class.getClassLoader().getResource("baseline/SaveAs.fxml"));
         Parent root = (Parent) loader.load();
+        ControllerSaveAs controllerSaveAs = loader.getController();
+        controllerSaveAs.setItemList(itemList);
 
         Stage stage = new Stage(StageStyle.DECORATED);
         stage.setTitle("Save As");
@@ -93,9 +95,12 @@ public class ControllerHomePage {
     public void handleLoad() throws IOException {
         FXMLLoader loader = new FXMLLoader(App.class.getClassLoader().getResource("baseline/Load.fxml"));
         Parent root = (Parent) loader.load();
+        clearList();
+        ControllerLoad controllerLoad = loader.getController();
+        controllerLoad.setItemList(itemList);
 
         Stage stage = new Stage(StageStyle.DECORATED);
-        stage.setTitle("Save As");
+        stage.setTitle("Load");
 
         Scene scene = new Scene(root);
 
@@ -172,11 +177,14 @@ public class ControllerHomePage {
         itemList.remove(selectedItem);
     }
 
-    @FXML
-    private void handleClear() {
+    private void clearList() {
         itemList = FXCollections.observableArrayList();
         filteredList = new FilteredList<>(itemList);
         tableView.setItems(filteredList);
+    }
+    @FXML
+    private void handleClear() {
+        clearList();
     }
 
     private void initializeList() {

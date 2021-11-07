@@ -23,10 +23,7 @@ public class ControllerSaveAs {
     TextField fileLocationTextBox;
 
     @FXML
-    TextField fileNameTextBox;
-
-    @FXML
-    public void filePick() {
+    public void filePick() throws IOException {
         System.out.println("filePick");
 
         // get box location
@@ -39,28 +36,52 @@ public class ControllerSaveAs {
         FileChooser choose = new FileChooser();
         choose.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text doc(*.txt)", "*.txt"));
         File f = choose.showSaveDialog(stage);
-        if(!f.getName().contains(".")) {
-            file = new File(f.getAbsolutePath() + ".txt");
+        if (f != null) {
+            file = f;
+            fileLocationTextBox.textProperty().setValue(f.getPath());
         }
     }
 
     @FXML
-    public void loadFile() {
-        addLine(file,0);
+    public void saveFile() {
+        System.out.println("saveFile initialize");
+        clearText();
+        for(int i = 0; i < itemList.size(); i++)
+            addLine(i);
+        System.out.println("saveFile works");
+
+        Stage stage = (Stage) fileLocationTextBox.getScene().getWindow();
+        stage.close();
     }
 
-    public void addLine(File file, int index) {
-        String line = "add line";
+    public void setItemList(ObservableList<Item> itemList) {
+        this.itemList = itemList;
+    }
 
-//        String line = itemList.get(index).getDescription() + "|"
-//                + itemList.get(index).getDueDateString() + "|"
-//                + itemList.get(index).isComplete() + "|";
+    public void addLine(int index) {
+        String line = itemList.get(index).getDescription() + "|"
+                + itemList.get(index).getDueDateString() + "|"
+                + itemList.get(index).isComplete() + "|\n";
 
+        FileWriter file_writer;
+        try {
+            file_writer = new FileWriter(file,true);
+            BufferedWriter buffered_Writer = new BufferedWriter(file_writer);
+            buffered_Writer.write(line);
+            buffered_Writer.flush();
+            buffered_Writer.close();
+
+        } catch (IOException e) {
+            System.out.println("Add line failed!!" +e);
+        }
+    }
+
+    public void clearText() {
         FileWriter file_writer;
         try {
             file_writer = new FileWriter(file,false);
             BufferedWriter buffered_Writer = new BufferedWriter(file_writer);
-            buffered_Writer.write(line);
+            buffered_Writer.write("");
             buffered_Writer.flush();
             buffered_Writer.close();
 
