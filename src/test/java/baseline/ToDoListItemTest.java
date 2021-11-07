@@ -11,42 +11,34 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ToDoListItemTest {
+    Item item;
 
     @BeforeEach
     void init() {
-
         // Initialize new Item
-
-
+        item = new Item();
     }
 
     @Test
     void editCompletionTest() {
-
         // change completion to true and assert it works (using isComplete())
+        item.isCompleteProperty().setValue(true);
 
+        assertTrue(item.isComplete());
     }
 
     @Test
     void editDescriptionTest() {
+        // Access and modify description
+        item.descriptionProperty().setValue("A");
 
-        // editDescription()
-        // assert it changed
-
+        assertEquals("A", item.getDescription());
     }
 
     @Test
     void editDateTest() {
+        item.dueDateStringProperty().setValue("2002-06-09");
 
-        // editDate()
-        // assert date changed
-
-    }
-
-    @Test
-    void isCompleteTest() {
-
-        // assert isComplete() == false
-
+        assertEquals("2002-06-09", item.getDueDateString());
     }
 }
