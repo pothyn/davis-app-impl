@@ -26,9 +26,9 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Save As" />
-                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Load" GridPane.columnIndex="1" />
-                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Help" GridPane.columnIndex="2" />
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSaveAs" prefHeight="35.0" prefWidth="150.0" text="Save As" />
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLoad" prefHeight="35.0" prefWidth="150.0" text="Load" GridPane.columnIndex="1" />
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleHelp" prefHeight="35.0" prefWidth="150.0" text="Help" GridPane.columnIndex="2" />
                </children>
             </GridPane>
          </children>
