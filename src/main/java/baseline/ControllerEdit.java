@@ -34,13 +34,15 @@ public class ControllerEdit {
     private void handleSubmit() {
         // validation stuff
         // ensure text is within 1-256 characters
-        if (dueDateBox.getValue() != null)
-            item.dueDateStringProperty().setValue(dueDateBox.getValue().toString());
-        if (dueDateBox.getEditor().textProperty().getValue().equals(""))
-            item.dueDateStringProperty().setValue(null);
-        isValid = true;
-        Stage stage = (Stage) submitButton.getScene().getWindow();
-        stage.close();
+        if (descriptionBox.getText() != null && (!descriptionBox.getText().isEmpty() || descriptionBox.getText().length() < 256)) {
+            if (dueDateBox.getValue() != null)
+                item.dueDateStringProperty().setValue(dueDateBox.getValue().toString());
+            if (dueDateBox.getEditor().textProperty().getValue().equals(""))
+                item.dueDateStringProperty().setValue(null);
+            isValid = true;
+            Stage stage = (Stage) submitButton.getScene().getWindow();
+            stage.close();
+        }
     }
 
     public void setItem(Item item) {

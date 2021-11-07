@@ -40,9 +40,6 @@
                   <VBox prefHeight="148.0" prefWidth="100.0" spacing="10.0">
                      <children>
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="100.0" text="Display" />
-                         <!--<fx:define>
-                             <ToggleGroup fx:id="group" />
-                         </fx:define>-->
                         <RadioButton fx:id="radioButtonAll" mnemonicParsing="false" prefHeight="18.0" prefWidth="100.0" text="All" />
                         <RadioButton fx:id="radioButtonIncomplete" mnemonicParsing="false" text="Incomplete" />
                         <RadioButton fx:id="radioButtonComplete" mnemonicParsing="false" text="Complete" />
