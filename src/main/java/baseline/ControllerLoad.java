@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Summer 2021 Application Assignment 1 Solution
+ *  Copyright 2021 Hunter Davis
+ */
+
 package baseline;
 
 import javafx.collections.ObservableList;
@@ -19,8 +24,6 @@ public class ControllerLoad {
 
     @FXML
     public void filePick() {
-        System.out.println("filePick");
-
         // get box location
         Stage stage = (Stage) fileTextBox.getScene().getWindow();
 
@@ -37,35 +40,28 @@ public class ControllerLoad {
 
     @FXML
     public void loadFile() throws FileNotFoundException {
-        System.out.println("load File initialize");
         getDataFromText();
-        System.out.println("load File works");
 
         Stage stage = (Stage) fileTextBox.getScene().getWindow();
         stage.close();
     }
 
     public void getDataFromText() throws FileNotFoundException {
-        System.out.println("getDataFromText");
         Scanner in = new Scanner(file);
-        int itemIndex = 0;
 
         while(in.hasNextLine()) {
             String line = in.nextLine();
-            parseData(line, itemIndex);
-            itemIndex++;
+            parseData(line);
         }
     }
 
-    public void parseData(String line, int itemIndex) {
+    public void parseData(String line) {
         Item newItem = new Item();
         int round = 0;
         int beginIndex = 0;
 
         for(int i=0; i < line.length(); i++) {
             if(line.charAt(i) == '|') {
-                System.out.println(line.substring(beginIndex,i));
-
                 if(round == 0)
                     newItem.descriptionProperty().setValue(line.substring(beginIndex,i));
                 else if(round == 1) {

@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Summer 2021 Application Assignment 1 Solution
+ *  Copyright 2021 Hunter Davis
+ */
+
 package baseline;
 
 import javafx.beans.value.ChangeListener;
@@ -5,7 +10,6 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -109,8 +113,17 @@ public class ControllerHomePage {
     }
 
     @FXML
-    public void handleHelp() {
+    public void handleHelp() throws IOException {
+        FXMLLoader loader = new FXMLLoader(App.class.getClassLoader().getResource("baseline/Help.fxml"));
+        Parent root = (Parent) loader.load();
 
+        Stage stage = new Stage(StageStyle.DECORATED);
+        stage.setTitle("Help");
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

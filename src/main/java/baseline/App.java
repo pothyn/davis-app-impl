@@ -1,6 +1,10 @@
+/*
+ *  UCF COP3330 Summer 2021 Application Assignment 1 Solution
+ *  Copyright 2021 Hunter Davis
+ */
+
 package baseline;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

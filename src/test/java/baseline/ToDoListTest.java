@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ToDoListTest {
 
+    // ToDoList isn't utilized for this program
+
     @BeforeEach
     void init() {
 
