@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class ToDoList {
 
-    private ArrayList<ToDoListItem> itemList;
+    private ArrayList<Item> itemList;
 
     public ToDoList() {
 
@@ -20,7 +20,7 @@ public class ToDoList {
 
     public void addItem() {
 
-        // add new ToDoListItem to itemList
+        // add new Item to itemList
 
     }
 

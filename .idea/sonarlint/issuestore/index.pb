@@ -18,5 +18,7 @@ X
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 A
 docs/diagram.puml,f\1\f1d4fe943c70db8e17c963b3b283a5d7df2524a2
-\
-,src/test/java/baseline/ToDoListItemTest.java,b\9\b9fce7e5802890b76f0ba8f36d77beb5542e8740
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+a
+1src/test/java/baseline/OpenAppControllerTest.java,0\9\0988e15de2460da1d76605f008d9bb20b1679090

@@ -1,9 +1,11 @@
 package baseline;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import javax.swing.plaf.OptionPaneUI;
 import java.io.IOException;
@@ -12,7 +14,6 @@ import java.util.Objects;
 public class App extends javafx.application.Application {
 
     private ToDoList app;
-    private OpenAppController oaCont;
     private Stage window;
 
     @Override
@@ -20,38 +21,34 @@ public class App extends javafx.application.Application {
 
         // Initialize app
         app = new ToDoList();
-        oaCont = new OpenAppController();
 
-        goToOpenApp();
-
+        window = stage;
+        goToHomePage();
     }
 
     public static void main(String[] args) {
         launch(args);
     }
 
-    public void goToOpenApp() throws IOException {
+    public void goToHomePage() throws IOException {
 
-//        // Open OpenApp
-//        FXMLLoader loader = new FXMLLoader(App.class.getClassLoader().getResource("OpenApp.fxml"));
-//        Parent root = (Parent) loader.load();
-//
-//        window.setTitle("To Do List");
-//        OpenAppController scene = loader.getController();
-//        scene.setList(listsList);
-//        window.setScene(new Scene(root));
+        // Open Load.fxml
+        FXMLLoader loader = new FXMLLoader(App.class.getClassLoader().getResource("baseline/HomePage.fxml"));
+        Parent root = (Parent) loader.load();
 
-    }
+        Scene scene = new Scene(root);
 
-    public void goToHomePage() {
-
-
+        window.setTitle("To Do List");
+        window.setScene(scene);
+        window.show();
 
     }
 
-    public void goToAddToDoListItem() {
+    public void goToAdd() {
 
+    }
 
+    public void goToEdit(Item i) {
 
     }
 
@@ -63,14 +60,13 @@ public class App extends javafx.application.Application {
 
     public void goToLoad() throws IOException {
 
-        // Open Load.fxml
-        FXMLLoader loader = new FXMLLoader(App.class.getClassLoader().getResource("load.fxml"));
-        Parent root = (Parent) loader.load();
-
-        window.setTitle("To Do List");
-        OpenAppController scene = loader.getController();
-        scene.setList(listsList);
-        window.setScene(new Scene(root));
+//        // Open Load.fxml
+//        FXMLLoader loader = new FXMLLoader(App.class.getClassLoader().getResource("Load.fxml"));
+//        Parent root = (Parent) loader.load();
+//
+//        window.setTitle("To Do List");
+//         scene = loader.getController();
+//        window.setScene(new Scene(root));
 
     }
 

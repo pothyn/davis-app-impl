@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="baseline.ControllerHomePage">
    <children>
       <HBox prefHeight="35.0" prefWidth="600.0">
          <children>
@@ -28,7 +28,7 @@
                <children>
                   <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Save As" />
                   <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Load" GridPane.columnIndex="1" />
-                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Tutorial" GridPane.columnIndex="2" />
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Help" GridPane.columnIndex="2" />
                </children>
             </GridPane>
          </children>
@@ -40,28 +40,30 @@
                   <VBox prefHeight="148.0" prefWidth="100.0" spacing="10.0">
                      <children>
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="100.0" text="Display" />
-                        <RadioButton mnemonicParsing="false" prefHeight="18.0" prefWidth="100.0" text="All" />
-                        <RadioButton mnemonicParsing="false" text="Incomplete" />
-                        <RadioButton mnemonicParsing="false" text="Complete" />
+                         <!--<fx:define>
+                             <ToggleGroup fx:id="group" />
+                         </fx:define>-->
+                        <RadioButton fx:id="radioButtonAll" mnemonicParsing="false" prefHeight="18.0" prefWidth="100.0" text="All" />
+                        <RadioButton fx:id="radioButtonIncomplete" mnemonicParsing="false" text="Incomplete" />
+                        <RadioButton fx:id="radioButtonComplete" mnemonicParsing="false" text="Complete" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
                      <children>
                         <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="100.0" text="Actions" />
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Add" />
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Edit" />
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Remove" />
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Clear" />
+                        <Button mnemonicParsing="false" onAction="#handleAdd" prefHeight="26.0" prefWidth="90.0" text="Add" />
+                        <Button mnemonicParsing="false" onAction="#handleEdit" prefHeight="26.0" prefWidth="90.0" text="Edit" />
+                        <Button mnemonicParsing="false" onAction="#handleRemove" prefHeight="26.0" prefWidth="90.0" text="Remove" />
+                        <Button mnemonicParsing="false" onAction="#handleClear" prefHeight="26.0" prefWidth="90.0" text="Clear" />
                      </children>
                   </VBox>
                </children>
             </VBox>
-            <TableView prefHeight="357.0" prefWidth="500.0">
+            <TableView fx:id="tableView" prefHeight="357.0" prefWidth="500.0">
               <columns>
-                <TableColumn prefWidth="40.79998779296875" text="Select" />
-                <TableColumn prefWidth="63.20001220703125" text="Complete" />
-                  <TableColumn prefWidth="325.60003662109375" text="Description" />
-                  <TableColumn prefWidth="68.0" text="Due Date" />
+                <TableColumn fx:id="tableComplete" prefWidth="63.20001220703125" text="Complete" />
+                  <TableColumn fx:id="tableDescription" prefWidth="364.60003662109375" text="Description" />
+                  <TableColumn fx:id="tableDueDate" prefWidth="68.0" text="Due Date" />
               </columns>
             </TableView>
          </children>

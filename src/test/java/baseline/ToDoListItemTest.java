@@ -15,7 +15,7 @@ class ToDoListItemTest {
     @BeforeEach
     void init() {
 
-        // Initialize new ToDoListItem
+        // Initialize new Item
 
     }
 
