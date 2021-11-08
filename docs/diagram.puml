@@ -1,78 +1,72 @@
 @startuml
 
-class MainApp {
+class App {
+    -window: Stage
 
-    -app: AllToDoLists
-
-    +start()
+    +start(Stage stage)
     +main(String[] args)
-    +sceneSetUp(String fileName, String windowTitle)
-    +addToDoLFxml(String title)
-    +viewListFxml()
-
+    +goToHomePage()
 }
 
-class AllToDoLists {
-
-    -toDoLists: ArrayList<ToDoList>
-
-    +AllToDoLists(): void
-
-    'helpful
-    +findToDoListIndex(String toDoListName): int
-
-    'required
-    +addToDoList(): void
-    +removeToDoList(int index)
-    +editToDoList(int index)
-    +saveToDoList(ArrayList<int> saveArray, String fileLocation): boolean
-    +loadToDoList(): void
-
-}
-
-class ToDoList {
-
-    -toDoTitle: String
-    -itemList: ArrayList<toDoListItem>
-
-    'required
-    +addItem(): void
-    +removeItem(): void
-    +displayAllItems(): void
-    +displayIncompleteItems(): void
-    +displayCompletedItems(): void
-
-}
-
-class ToDoListItem {
-
-    -date: Date
+class Item {
+    -dueDate: String
     -itemDescription: String
     -isComplete: boolean
 
-    +markItemComplete(): void
-    +editDescription(): void
-    +editDueDate(): void
+    +setComplete(boolean value): void
     +isComplete(): boolean
-    +changeComplete(boolean value): void
-
+    +setDescription(String description): void
+    +getDescription():
+    +setDueDate(String dueDate): void
 }
 
-class Date {
+class ControllerHomePage {
+    -radioButtonAll
+    -radioButtonIncomplete
+    -radioButtonComplete
+    -tableView
+    -tableIsComplete
+    -tableDescription
+    -tableDueDate
 
-    -day: int
-    -month: int
-    -year: int
-
-    +Date(int day, int month, int year): void
-    +changeDate(int day, month, year): void
-    +getDate(): String
-
+    +clear()
+    +add()
+    +remove()
+    +edit()
+    +saveAs()
+    +load()
+    +help()
+    +changeDisplayRadioButtons()
 }
 
-MainApp -> AllToDoLists
-AllToDoLists -> ToDoList
-ToDoList -> ToDoListItem
-ToDoListItem -* Date
+class ControllerEdit {
+    -item
+
+    +submit()
+}
+
+class ControllerLoad {
+    +pickFile()
+    +loadFile()
+    +parseData()
+}
+
+class ControllerSaveAs {
+    +addLine()
+    +pickFile()
+    +save()
+}
+
+App -> ControllerHomePage
+
+ControllerHomePage -> ControllerLoad
+ControllerHomePage -> ControllerEdit
+ControllerHomePage -> ControllerSaveAs
+
+ControllerHomePage -> Item
+ControllerEdit -> Item
+ControllerSaveAs -> Item
+ControllerLoad -> Item
+
 
 @enduml
